@@ -6,6 +6,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HeroSection from "./components/HeroSection";
 import ProjectsPage from "./components/ProjectPage";
+import CacophonicCadence from './components/Pages/CacophonicCadence';
+import Pose from './components/Pages/Pose';
+import Ethnography from './components/Pages/Ethnography'; // Ensure you create this component
+import CreativeCoding from './components/Pages/CreativeCoding'; // Import the new component
 import styled from "styled-components";
 
 // Styled components
@@ -31,8 +35,8 @@ function App() {
         <Body>
           <Navbar />
           <Routes>
-            <Route
-              path="/"
+            <Route 
+              path="/" 
               element={
                 <>
                   <HeroSection />
@@ -40,9 +44,14 @@ function App() {
                     {/* Include other components you want on the main page */}
                   </Wrapper>
                 </>
-              }
+              } 
             />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/1" element={<Ethnography />} />
+            <Route path="/projects/2" element={<CacophonicCadence />} />
+            <Route path="/projects/3" element={<Pose />} />
+            <Route path="/projects/10" element={<CreativeCoding />} /> {/* Add the new route */}
+            {/* Add other routes for more projects if needed */}
           </Routes>
         </Body>
       </Router>

@@ -6,7 +6,7 @@ import { NavLink as LinkR } from 'react-router-dom'; // Import LinkR for routing
 
 // Styled components
 export const Nav = styled.div`
-  background-color: ${({ theme }) => theme.card_light};
+  background-color: transparent; /* Navbar stays transparent */
   height: 80px;
   display: flex;
   align-items: center;
@@ -16,6 +16,7 @@ export const Nav = styled.div`
   top: 0;
   z-index: 10;
   transition: 0.8s all ease;
+  box-shadow: none; /* Ensure no shadows are present */
 `;
 
 export const NavbarContainer = styled.div`
@@ -35,6 +36,7 @@ export const NavLogo = styled.div`
   justify-content: start;
   align-items: center;
   text-decoration: none;
+  color: ${({ theme }) => theme.secondary}; /* Ensure text color is set */
 
   @media (max-width: 640px) {
     padding: 0;
@@ -51,7 +53,7 @@ export const NavItems = styled.ul`
   list-style: none;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: none; /* Hide on mobile */
   }
 `;
 
@@ -63,16 +65,17 @@ export const NavLink = styled(LinkR)`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.primary} !important;
+    color: ${({ theme }) => theme.secondary} !important;
+    background: transparent; /* No background on hover */
   }
 
   &.active {
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
+    border-bottom: 0px solid ${({ theme }) => theme.primary}; /* Adjust active link styling */
   }
 `;
 
 export const GitHubButton = styled.button`
-  border: 1.8px solid ${({ theme }) => theme.primary};
+  border: 1.8px solid ${({ theme }) => theme.gray_one};
   display: flex;
   align-items: center;
   height: 70%;
@@ -103,7 +106,7 @@ export const ButtonContainer = styled.div`
   padding: 0 6px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: none; /* Hide on mobile */
   }
 `;
 
@@ -132,7 +135,7 @@ export const MobileMenu = styled.div`
   right: 0;
   width: 100%;
   padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light + '99'};
+  background: ${({ theme }) => theme.card_light + '99'}; // Optional transparent background for the mobile menu
   transition: all 0.6s ease-in-out;
   transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
   border-radius: 0 0 20px 20px;
@@ -191,7 +194,7 @@ export const MobileMenuButton = styled.a`
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme(); // Access the theme
-  
+
   return (
     <Nav>
       <NavbarContainer>
@@ -203,8 +206,7 @@ const Navbar = () => {
           <NavLink to="/">About</NavLink>
           <NavLink to="/">Skills</NavLink>
           <NavLink to="/">Experience</NavLink>
-          <NavLink to="/projects" target="_blank">Projects</NavLink> {/* Opens Projects in a new tab */}
-          <NavLink to="/">Education</NavLink>
+          <NavLink to="/projects">Projects</NavLink> {/* Opens Projects in the same tab */}
         </NavItems>
         <ButtonContainer>
           <GitHubButton>Github Profile</GitHubButton>
@@ -215,8 +217,7 @@ const Navbar = () => {
           <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>About</MobileMenuLink>
           <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>Skills</MobileMenuLink>
           <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>Experience</MobileMenuLink>
-          <MobileMenuLink to="/projects" target="_blank" onClick={() => setIsOpen(false)}>Projects</MobileMenuLink> {/* New tab link */}
-          <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>Education</MobileMenuLink>
+          <MobileMenuLink to="/projects" onClick={() => setIsOpen(false)}>Projects</MobileMenuLink> {/* Same tab link */}
         </MobileMenuItems>
         <MobileMenuButton href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
           Github Profile
@@ -227,3 +228,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
