@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Static imports for project images and video
+// Static imports for project images
 import Image1 from '../ProjectInfoImage/Cacophonic/1.png';
 import Image2 from '../ProjectInfoImage/Cacophonic/2.gif';
 import Image3 from '../ProjectInfoImage/Cacophonic/3.png';
@@ -9,11 +9,9 @@ import Image4 from '../ProjectInfoImage/Cacophonic/4.png';
 import Image5 from '../ProjectInfoImage/Cacophonic/7.png';
 import Image6 from '../ProjectInfoImage/Cacophonic/5.png';
 import Image7 from '../ProjectInfoImage/Cacophonic/6.png';
-
 import Image8 from '../ProjectInfoImage/Cacophonic/8.png';
 import Image9 from '../ProjectInfoImage/Cacophonic/9.png';
-import MimicryBirdVideo from '../ProjectInfoImage/Cacophonic/Mimicry bird video.mp4';
-import StagingVideo from '../ProjectInfoImage/Cacophonic/Srivikashini-2.mp4';
+
 // Styled components
 const Container = styled.div`
   display: flex;
@@ -24,7 +22,6 @@ const Container = styled.div`
   max-width: 100%; /* Ensure max-width is not limiting */
 `;
 
-
 const Image = styled.img`
   width: 100%;
   max-width: 1100px; /* Adjust max-width as needed */
@@ -34,17 +31,6 @@ const Image = styled.img`
   margin-right: auto; /* Centers the image */
 `;
 
-const Video = styled.video`
-  width: 100%;
-  max-width: 800px; /* Adjust max-width as needed */
-  margin: 10px 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-
-
 const Iframe = styled.iframe`
   width: 1100px; /* Set to a fixed width to see if it changes */
   height: 550px; /* Adjust the height accordingly */
@@ -53,7 +39,6 @@ const Iframe = styled.iframe`
   margin-right: auto;
   border: none; /* Remove border */
 `;
-
 
 
 const Title = styled.h1`
@@ -102,7 +87,6 @@ const IndicatorCircle = styled.div`
   margin-right: 8px;
 `;
 
-// Helper function to check which section is currently in view
 const useActiveSection = (sectionIds) => {
   const [activeSection, setActiveSection] = React.useState('');
 
@@ -164,15 +148,16 @@ const CacophonicCadence = () => {
 
       <section id="Prototypes">
         <Image src={Image3} alt="Cacophonic Cadence Image 3" />
-        
-        <Video controls>
-          <source src={MimicryBirdVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </Video>
-       
-       
+        {/* Mimicry Bird Video from YouTube */}
+        <Iframe 
+          src="https://www.youtube.com/embed/AqPUCWfuJRY" 
+          title="Mimicry Bird Video"
+          allowFullScreen
+        />
       </section>
+
       <Image src={Image4} alt="Cacophonic Cadence Image 4" />
+      
       {/* Iframe Section for the p5.js sketch */}
       <section id="iframe">
         <Iframe 
@@ -181,23 +166,22 @@ const CacophonicCadence = () => {
           allowFullScreen
         />
       </section>
-      
-     
-      <Image src={Image5} alt="Cacophonic Cadence Image 7" />
-      <Image src={Image6} alt="Cacophonic Cadence Image 5" />
-        <Image src={Image7} alt="Cacophonic Cadence Image 6" />
-        
 
-        <section id="FInal Installation">
-        <Image src={Image8} alt="Cacophonic Cadence Image 1" />
-        <Image src={Image9} alt="Cacophonic Cadence Image 2" />
+      <Image src={Image5} alt="Cacophonic Cadence Image 5" />
+      <Image src={Image6} alt="Cacophonic Cadence Image 6" />
+      <Image src={Image7} alt="Cacophonic Cadence Image 7" />
+
+      <section id="Final Installation">
+        <Image src={Image8} alt="Cacophonic Cadence Image 8" />
+        <Image src={Image9} alt="Cacophonic Cadence Image 9" />
       </section>
 
-      <Video controls>
-          <source src={StagingVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </Video>
-
+      {/* Staging Video from YouTube */}
+      <Iframe 
+        src="https://www.youtube.com/embed/UZoyuw0YdVc" 
+        title="Staging Video"
+        allowFullScreen
+      />
     </Container>
   );
 };
