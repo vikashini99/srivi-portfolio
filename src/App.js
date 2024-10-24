@@ -10,6 +10,8 @@ import CacophonicCadence from './components/Pages/CacophonicCadence';
 import Pose from './components/Pages/Pose';
 import Ethnography from './components/Pages/Ethnography'; // Ensure you create this component
 import CreativeCoding from './components/Pages/CreativeCoding'; // Import the new component
+import Kinetics from './components/Pages/Kinetics'; // Import the new component
+import ARGut from './components/Pages/ARGut.js'; 
 import styled from "styled-components";
 
 // Styled components
@@ -50,7 +52,9 @@ function App() {
             <Route path="/projects/1" element={<Ethnography />} />
             <Route path="/projects/2" element={<CacophonicCadence />} />
             <Route path="/projects/3" element={<Pose />} />
-            <Route path="/projects/10" element={<CreativeCoding />} /> {/* Add the new route */}
+            <Route path="/projects/5" element={<Kinetics/>} /> {/* Add the new route */}
+            <Route path="/projects/7" element={<CreativeCoding />} /> {/* Add the new route */}
+            <Route path="/projects/10" element={<ARGut />} />
             {/* Add other routes for more projects if needed */}
           </Routes>
         </Body>

@@ -15,13 +15,15 @@ const Button = styled.button`
     cursor: pointer;
     transition: all 0.8s ease-in-out;
 `;
-
 const Card = styled.div`
     width: 80%;
-    max-width: 400px;
+    max-width: 500px;
     height: 490px;
-    background-color: ${({ theme }) => theme.card};
+    background: linear-gradient(145deg, #F9742A, #232323);
+    background-blend-mode: multiply;
+    background-image: url('/path/to/texture.png'); /* Optional texture image */
     cursor: pointer;
+    border: 2px solid rgba(151, 151, 151, 0.6);  /* Semi-transparent gray border */
     border-radius: 10px;
     box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
     overflow: hidden;
@@ -32,8 +34,7 @@ const Card = styled.div`
 
     &:hover {
         transform: translateY(-10px);
-        box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
-        filter: brightness(1.1);
+        box-shadow: 0 0 50px 4px rgba(249, 116, 42, 0.6);
     }
 
     &:hover ${Button} {
@@ -43,9 +44,15 @@ const Card = styled.div`
     padding: 15px;
 `;
 
+
+
+
+
+
+
 const Image = styled.img`
     width: 100%;
-    height: 250px;
+    height: 260px;
     background-color: ${({ theme }) => theme.white};
     border-radius: 0;
     box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
@@ -80,7 +87,7 @@ const Details = styled.div`
 const Title = styled.div`
     font-size: 25px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_secondary};
+    color: ${({ theme }) => theme.secondary};
     overflow: hidden;
     display: -webkit-box;
     max-width: 100%;
@@ -103,7 +110,7 @@ const Date = styled.div`
 
 const Description = styled.div`
     font-weight: 310;
-    color: ${({ theme }) => theme.text_desc + 99};
+    color: ${({ theme }) => theme.gray_one };
     overflow: hidden;
     margin-top: 8px;
     display: -webkit-box;

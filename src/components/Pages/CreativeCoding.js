@@ -2,6 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Styled component for the iframe
+
+const Title = styled.h1`
+  margin: 20px 0;
+  font-size: 32px; /* You can adjust the size as needed */
+  color: ${({ theme }) => theme.primary};
+  text-align: center; /* Centers the title */
+`;
+
+const Description = styled.p`
+  margin-bottom: 20px;
+  color: ${({ theme }) => theme.gray_one};
+  text-align: center; /* Centers the description */
+`;
 const Iframe = styled.iframe`
   width: 100%; /* Allow iframe to take up full width */
   max-width: 1200px; /* Optional: Set a maximum width */
@@ -15,12 +28,12 @@ const Iframe = styled.iframe`
 const CreativeCoding = () => {
   return (
     <div>
-      <h1>Creative Coding</h1>
-      <p>
-        Here is an embedded webpage showcasing creative coding projects.
-      </p>
+      <Title>Cacophonic Cadence</Title>
+      <Description>
+        An interactive code exploration using Perlin noise
+      </Description>
       <Iframe 
-        src="http://192.168.1.102:9966/" 
+        src="https://editor.p5js.org/srivikashini_k/full/lcmW57vsW" 
         title="Creative Coding Projects" 
         allowFullScreen
       />
