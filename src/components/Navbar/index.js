@@ -70,9 +70,10 @@ export const NavLink = styled(LinkR)`
   }
 
   &.active {
-    border-bottom: 0px solid ${({ theme }) => theme.primary}; /* Adjust active link styling */
+    border-bottom: none; /* No line for active state */
   }
 `;
+
 
 export const GitHubButton = styled.button`
   border: 1.8px solid ${({ theme }) => theme.gray_one};
@@ -80,16 +81,17 @@ export const GitHubButton = styled.button`
   align-items: center;
   height: 70%;
   border-radius: 20px;
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   cursor: pointer;
   padding: 0 20px;
   font-weight: 500;
   font-size: 16px;
   transition: background 0.6s ease-in-out, color 0.6s ease-in-out;
+  text-decoration: none; /* Remove underline */
 
   &:hover {
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.white};
+    background: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.gray_one};
   }
 
   @media screen and (max-width: 768px) {
@@ -183,12 +185,14 @@ export const MobileMenuButton = styled.a`
   font-weight: 500;
   font-size: 16px;
   transition: all 0.6s ease-in-out;
+  text-decoration: none; /* Remove underline */
 
   &:hover {
     background: ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.white};
   }
 `;
+
 
 // Navbar component
 const Navbar = () => {
@@ -198,34 +202,43 @@ const Navbar = () => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo>Logo</NavLogo>
+        <NavLogo>Srivi</NavLogo>
         <MobileIcon onClick={() => setIsOpen(!isOpen)}>
           <FaBars />
         </MobileIcon>
         <NavItems>
           <NavLink to="/">About</NavLink>
-          <NavLink to="/">Skills</NavLink>
-          <NavLink to="/">Experience</NavLink>
           <NavLink to="/projects">Projects</NavLink> {/* Opens Projects in the same tab */}
         </NavItems>
         <ButtonContainer>
-          <GitHubButton>Github Profile</GitHubButton>
+          <GitHubButton 
+            as="a" 
+            href="https://drive.google.com/file/d/1IJP6aGDhrcJwU-u0psY-QFURaQ3C1j7w/view?usp=sharing" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Resume
+          </GitHubButton>
         </ButtonContainer>
       </NavbarContainer>
       <MobileMenu isOpen={isOpen}>
         <MobileMenuItems>
           <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>About</MobileMenuLink>
-          <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>Skills</MobileMenuLink>
-          <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>Experience</MobileMenuLink>
           <MobileMenuLink to="/projects" onClick={() => setIsOpen(false)}>Projects</MobileMenuLink> {/* Same tab link */}
         </MobileMenuItems>
-        <MobileMenuButton href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
-          Github Profile
+        <MobileMenuButton 
+          as="a" 
+          href="https://drive.google.com/file/d/1IJP6aGDhrcJwU-u0psY-QFURaQ3C1j7w/view?usp=sharing" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Resume
         </MobileMenuButton>
       </MobileMenu>
     </Nav>
   );
 };
 
-export default Navbar;
 
+
+export default Navbar;

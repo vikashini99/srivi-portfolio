@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Static imports for project images
 import Image1 from '../ProjectInfoImage/Pose/1.png';
-import Image2 from '../ProjectInfoImage/Pose/2.png';
+import Image2 from '../ProjectInfoImage/Pose/2-1.png';
 import Image3 from '../ProjectInfoImage/Pose/3.png';
 import Image4 from '../ProjectInfoImage/Pose/4.png';
 import Image5 from '../ProjectInfoImage/Pose/5.png';
@@ -54,7 +54,7 @@ const Image = styled.img`
 const Title = styled.h1`
   margin: 20px 0;
   font-size: 32px; /* You can adjust the size as needed */
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   text-align: center; /* Centers the title */
 `;
 
@@ -149,9 +149,10 @@ const Pose = () => {
       </PageStamps>
 
       {/* Title and Description for the entire project */}
-      <Title>Pose Project</Title>
+      <Title>Pose </Title>
       <Description>
-        This is a detailed description of the Pose project, focusing on its objectives and key concepts.
+      Pose is a innovative smart wearable solution that addresses the need for healthy hand posture in smartphone usage.
+
       </Description>
 
       {/* Images Section */}
@@ -178,6 +179,19 @@ const Pose = () => {
             <Image src={image} alt={`Pose Image ${index + 21}`} key={index} />
         ))}
       </section> 
+
+      <section id="Prototyping">
+        {[ Image14 ,Image15 , Image16 , Image17 , Image18 , Image19  ].map((image, index) => (
+            <Image src={image} alt={`Pose Image ${index + 21}`} key={index} />
+        ))}
+      </section> 
+
+      <section id="Solution">
+        {[  Image20 , Image21 , Image22 ,Image23 , Image24 , Image25 , Image26 , Image27 ].map((image, index) => (
+            <Image src={image} alt={`Pose Image ${index + 21}`} key={index} />
+        ))}
+      </section> 
+
     </Container>
   );
 };

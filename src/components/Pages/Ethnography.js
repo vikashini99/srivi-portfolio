@@ -28,12 +28,13 @@ const Title = styled.h1`
   font-size: 36px;
   color: ${({ theme }) => theme.secondary};
   font-family: 'Yeseva One', sans-serif;
+    margin-bottom: 20px;
 `;
 
 const Description = styled.p`
   font-size: 16px;
   color: ${({ theme }) => theme.gray_one};
-  max-width: 600px;
+  max-width: 1000px;
   margin-bottom: 20px;
 `;
 
@@ -47,7 +48,7 @@ const Image = styled.img`
 const Ethnography = () => (
   <Container>
     <Title>Ethnography</Title>
-    <Description>This is a detailed description of the Ethnography project...</Description>
+    <Description>Conducted a Qualitative Research with a a group of women involved in Tiffin service buisness in Ahmedabad , Gujarat</Description>
     
     {/* Render Ethnography project images */}
     <Image src={Image1} alt="Ethnography Image 1" />

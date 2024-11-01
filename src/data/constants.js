@@ -23,11 +23,11 @@ export const projects = [
   {
     id: 0,
     title: "Samagra - Internship",
-    date: "Jan 2023 - Present",
+    date: "August 2024 - Present",
     description:
-      "Human-centered design project with Samagra, focusing on creating impactful solutions for user needs.",
+      "Designing human-centered solutions to drive impactful social change through user-focused governance innovations. ",
     image: require('../components/ProjectInfoImage/CardImage/main2.png'), // Updated path
-    tags: ["Human-Centered Design", "Research"],
+    tags: ["Governance", "Human-Centered Design", "User Research"],
     categories: ["human-centered design"],
     github: "https://github.com/vikashini99/samagra",
     webapp: "https://samagra-showcase.netlify.app",
@@ -35,11 +35,11 @@ export const projects = [
   {
     id: 1,
     title: "Ethnography Research",
-    date: "May 2023 - Aug 2023",
+    date: "Feb 2024 - March 2024",
     description:
-      "A research-driven project focusing on ethnographic insights for user-centered design.",
-    image: require('../components/ProjectInfoImage/CardImage/ethnography.png'), // Placeholder for image
-    tags: ["Research", "Ethnography"],
+      "Ethnographic Research with Tiffin service group in Ahmedabad.",
+    image: require('../components/ProjectInfoImage/CardImage/ethnography.png'), // Updated path
+    tags: ["Qualitative research", "Behavioral study", "User research"],
     categories: ["design research"],
     github: "https://github.com/vikashini99/ethnography",
     webapp: "https://ethnography-showcase.netlify.app",
@@ -47,9 +47,9 @@ export const projects = [
   {
     id: 2,
     title: "Cacophonic Cadence",
-    date: "Oct 2023 - Dec 2023",
+    date: "August 2023 - Oct 2023",
     description:
-      "A soundscape art exhibit focused on the effects of environmental noise pollution on birds. I handled the sound design and conceptual research for this immersive experience.",
+      "A Sound installation aimed at raising awareness on the effects of environmental noise pollution on birds.",
    image: require('../components/ProjectInfoImage/CardImage/cacophonic-cadence.gif'), // Placeholder for image
     tags: ["Sound Design", "Immersive Art", "Research"],
     categories: ["immersive experience design"],
@@ -59,11 +59,11 @@ export const projects = [
   {
     id: 3,
     title: "Pose",
-    date: "May 2023 - Aug 2023",
+    date: "May 2023 - July 2023",
     description:
-      "A wearable solution designed to improve hand posture during smartphone usage. I focused on smart wearable design research for optimal ergonomics.",
+      "A smart wearable that addresses the need for healthy hand posture in smartphone usage.",
     image: require('../components/ProjectInfoImage/CardImage/pose.png'), // Corrected path
-    tags: ["Wearable Tech", "Product Design", "Research"],
+    tags: ["Wearable Tech", "Product Design", "Problem Solving"],
     categories: ["human-centered design"],
     github: "https://github.com/vikashini99/pose",
     webapp: "https://pose-wearable.netlify.app",
@@ -71,9 +71,9 @@ export const projects = [
   {
     id: 4,
     title: "Kurio",
-    date: "Apr 2023 - Sep 2023",
+    date: "Apr 2023 - May 2023",
     description:
-      "A research-driven project combining human-centered design and speculative insights for future innovations.",
+      "AI companion that encourages children to think critically and explore, rather than providing direct solutions. ",
     image: require('../components/ProjectInfoImage/CardImage/kurio.png'), // Placeholder for image
     tags: ["Speculative Design", "Human-Centered Design", "Research"],
     categories: ["human-centered design", "design research"],
@@ -83,27 +83,27 @@ export const projects = [
   {
     id: 5,
     title: "Kinetic Sculpture",
-    date: "Jan 2024 - Present",
+    date: "August 2022 - October 2022",
     description:
-      "An interactive kinetic sculpture exhibit involving coding, electronics, woodworking, and mechanics. This was my first exploration into design, where I received great feedback for the intricate mechanics and creative concept.",
+      "An interactive kinetic sculpture installation.",
     image: require('../components/ProjectInfoImage/CardImage/kinetics.gif'), // Placeholder for image
-    tags: ["Creative Coding", "Electronics", "Art Installation"],
+    tags: ["Art Installation","Creative Coding", "Electronics", ],
     categories: ["immersive experience design", "creative coding"],
     github: "https://github.com/vikashini99/kinetics",
     webapp: "https://kinetics-showcase.netlify.app",
   },
- // {
-   // id: 6,
-   // title: "Speculation",
-   // date: "May 2023 - Aug 2023",
-    //description:
-     // "A speculative design project exploring future scenarios and user interactions.",
-   // image: require('../components/ProjectInfoImage/CardImage/speculation.png'), // Placeholder for image
-   // tags: ["Speculative Design", "Research"],
-   // categories: ["design research", "immersive experience design"],
+ {
+    id: 6,
+    title: "BioRythm",
+    date: "May 2024 - June 2024",
+    description:
+      "An immersive audio-visual experience that visualizes brain neuron activity through speculative ASMR sounds.",
+    image: require('../components/ProjectInfoImage/CardImage/TD.gif'), // Placeholder for image
+    tags: ["Audio-Visual art", "Touch Designer"],
+    categories: ["immersive experience design"],
    // github: "https://github.com/vikashini99/speculation",
    // webapp: "https://speculation-showcase.netlify.app",
- // },
+  },
   
   //{
    // id: 8,
@@ -148,8 +148,8 @@ export const projects = [
     description:
       "An immersive AR project focusing on the intersection of gut health and user experience, exploring human-centered design and immersive tech.",
     image: require('../components/ProjectInfoImage/CardImage/gut.png'), // Placeholder for image
-    tags: ["AR", "Health Tech", "Immersive Experience", "Creative Coding"],
-    categories: ["human-centered design", "immersive experience design", "creative coding"],
+    tags: ["Augemented Reality", "Health Tech", "Immersive Experience", ],
+    categories: ["human-centered design", "immersive experience design"],
     github: "https://github.com/vikashini99/ar-gut-health",
     webapp: "https://ar-gut-health-showcase.netlify.app",
   },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 // Static imports for project images
@@ -40,11 +40,10 @@ const Iframe = styled.iframe`
   border: none; /* Remove border */
 `;
 
-
 const Title = styled.h1`
   margin: 20px 0;
   font-size: 32px; /* You can adjust the size as needed */
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   text-align: center; /* Centers the title */
 `;
 
@@ -121,6 +120,11 @@ const CacophonicCadence = () => {
   // Section IDs
   const sectionIds = ['Introduction', 'Prototypes', 'Final Installation'];
   const activeSection = useActiveSection(sectionIds);
+
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>

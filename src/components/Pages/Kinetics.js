@@ -45,7 +45,7 @@ const Iframe = styled.iframe`
 const Title = styled.h1`
   margin: 20px 0;
   font-size: 32px;
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   text-align: center;
 `;
 
@@ -118,15 +118,27 @@ const useActiveSection = (sectionIds) => {
 };
 
 const Kinetics = () => {
-  const sectionIds = ['Introduction', 'Prototypes','Mechanism' ,'Final Installation'];
+  const sectionIds = ['Introduction', 'Prototypes', 'Mechanism', 'Final Installation'];
   const activeSection = useActiveSection(sectionIds);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Scroll to the top when the component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
       {/* Page Stamps for navigating between sections */}
       <PageStamps>
         {sectionIds.map((id) => (
-          <PageStampLink href={`#${id}`} key={id}>
+          <PageStampLink key={id} onClick={() => scrollToSection(id)}>
             <IndicatorCircle active={activeSection === id} />
             {id.replace('-', ' ')}
           </PageStampLink>
@@ -146,14 +158,12 @@ const Kinetics = () => {
       </section>
 
       <section id="Prototypes">
-      <Iframe 
+        <Iframe 
           src="https://www.youtube.com/embed/Q7LXvlW7oMk" 
           title="Kinetics Video"
           allowFullScreen
         />
         <Image src={Image3} alt="Kinetics Image 3" />
-        {/* Corrected Video Embed */}
-        
       </section>
 
       <Image src={Image4} alt="Kinetics Image 4" />
@@ -161,28 +171,25 @@ const Kinetics = () => {
       <Image src={Image6} alt="Kinetics Image 6" />
 
       <section id="Mechanism"> 
-      <Image src={Image7} alt="Kinetics Image 7" />
-      <Iframe 
-  src="https://www.youtube.com/embed/0wHZbXmliJY" 
-  title="Kinetics mec"
-  allowFullScreen
-    />
-
-      <Image src={Image8} alt="Kinetics Image 8" />
-      <Image src={Image9} alt="Kinetics Image 9" />
-      <Image src={Image10} alt="Kinetics Image 10" />
-
+        <Image src={Image7} alt="Kinetics Image 7" />
+        <Iframe 
+          src="https://www.youtube.com/embed/0wHZbXmliJY" 
+          title="Kinetics mec"
+          allowFullScreen
+        />
+        <Image src={Image8} alt="Kinetics Image 8" />
+        <Image src={Image9} alt="Kinetics Image 9" />
+        <Image src={Image10} alt="Kinetics Image 10" />
       </section>
 
       <section id="Final Installation">
         <Image src={Image11} alt="Kinetics Image 11" />
-
         <Iframe 
-  src="https://youtube.com/embed/ch8T4qYIbnw" 
-  title="Kinetics mec"
-  allowFullScreen
-/>
-<Iframe 
+          src="https://youtube.com/embed/ch8T4qYIbnw" 
+          title="Kinetics mec"
+          allowFullScreen
+        />
+        <Iframe 
           src="https://www.youtube.com/embed/Q7LXvlW7oMk" 
           title="Kinetics Video"
           allowFullScreen

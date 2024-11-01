@@ -13,6 +13,8 @@ import CreativeCoding from './components/Pages/CreativeCoding'; // Import the ne
 import Kinetics from './components/Pages/Kinetics'; // Import the new component
 import ARGut from './components/Pages/ARGut.js'; 
 import styled from "styled-components";
+import BioRythm from "./components/Pages/BioRythm.js";
+import Kurio from "./components/Pages/Kurio.js";
 
 // Styled components
 const Body = styled.div`
@@ -52,9 +54,11 @@ function App() {
             <Route path="/projects/1" element={<Ethnography />} />
             <Route path="/projects/2" element={<CacophonicCadence />} />
             <Route path="/projects/3" element={<Pose />} />
+            <Route path="/projects/4" element={<Kurio />} />
             <Route path="/projects/5" element={<Kinetics/>} /> {/* Add the new route */}
             <Route path="/projects/7" element={<CreativeCoding />} /> {/* Add the new route */}
             <Route path="/projects/10" element={<ARGut />} />
+            <Route path="/projects/6" element={<BioRythm />} />
             {/* Add other routes for more projects if needed */}
           </Routes>
         </Body>

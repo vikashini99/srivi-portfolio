@@ -7,7 +7,7 @@ import {
   CardContainer, 
   ToggleButtonGroup, 
   ToggleButton, 
-  Divider 
+  //Divider 
 } from './ProjectsStyle';
 import ProjectCard from '../Cards/ProjectCards';
 import { projects } from '../../data/constants';
@@ -25,21 +25,21 @@ const Projects = ({ openModal, setOpenModal }) => {
       <Wrapper>
         <Title>My Portfolio</Title>
         <Desc>
-          Through my work, I strive to combine my imagination with analytical thinking and rigorous research to dive deeper into the topic to derive valuable insights and solutions. Here are some of my projects.
+        I blend creativity with deep exploration and insightful research, striving to uncover valuable insights and innovative solutions. My work is categorized into three distinct areas that showcase my multidisciplinary approach.
         </Desc>
         <ToggleButtonGroup>
           <ToggleButton active={toggle === 'all'} onClick={() => setToggle('all')}>
             All
           </ToggleButton>
-          <Divider />
+         
           <ToggleButton active={toggle === 'human-centered design'} onClick={() => setToggle('human-centered design')}>
             Human-Centered Design
           </ToggleButton>
-          <Divider />
+         
           <ToggleButton active={toggle === 'immersive experience design'} onClick={() => setToggle('immersive experience design')}>
             Immersive Experience Design
           </ToggleButton>
-          <Divider />
+       
           <ToggleButton active={toggle === 'design research'} onClick={() => setToggle('design research')}>
             Design Research
           </ToggleButton>

@@ -45,7 +45,7 @@ export const Desc = styled.div`
     font-size: 16px;
     text-align: center;
     max-width: 600px;
-    color: ${({ theme }) => theme.gray_one};
+    color: ${({ theme }) => theme.white };
     margin: 20px 0; /* Margin above and below description */
     
     @media (max-width: 768px) {
@@ -71,8 +71,8 @@ export const ToggleButton = styled.div`
     padding: 15px 30px;
     cursor: pointer;
     background: ${({ active, theme }) => (active ? theme.secondary : 'transparent')}; /* No fill when inactive */
-    color: ${({ active, theme }) => (active ? theme.text_primary : theme.gray_one)}; /* Text color changes based on state */
-    border: 2px solid ${({ theme }) => theme.gray_one}; /* Add border color */
+    color: ${({ active, theme }) => (active ? theme.text_primary : theme.white)}; /* Text color changes based on state */
+    border: 1.5px solid ${({ theme }) => theme.white }; /* Add border color */
     border-radius: 50px 30px 50px 30px; /* Uneven border-radius for blob shape */
     transition: all 0.3s ease;
     position: relative;
@@ -89,10 +89,10 @@ export const ToggleButton = styled.div`
     }
 `;
 
-export const Divider = styled.div`
-    width: 1.5px;
-    background: ${({ theme }) => theme.primary};
-`;
+//export const Divider = styled.div`
+   // width: 1.5px;
+   // background: ${({ theme }) => theme.primary};
+//`;
 
 export const CardContainer = styled.div`
     display: flex;

@@ -70,8 +70,8 @@ const Tags = styled.div`
 const Tag = styled.span`
     font-size: 14px;
     font-weight: 400;
-    color: ${({ theme }) => theme.primary};
-    background-color: ${({ theme }) => theme.primary + 15};
+    color: ${({ theme }) => theme.white + 85};
+    background-color: ${({ theme }) => theme.secondary + 55 };
     padding: 2px 8px;
     border-radius: 10px;
 `;
@@ -101,7 +101,7 @@ const Date = styled.div`
     font-size: 12px;
     margin-left: 2px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 80};
+    color: ${({ theme }) => theme.gray_one + 80};
 
     @media only screen and (max-width: 768px) {
         font-size: 10px;
