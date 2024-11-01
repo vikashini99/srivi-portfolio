@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Title = styled.h1`
   margin: 20px 0;
   font-size: 32px; /* You can adjust the size as needed */
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
   text-align: center; /* Centers the title */
 `;
 
@@ -28,9 +28,9 @@ const Iframe = styled.iframe`
 const CreativeCoding = () => {
   return (
     <div>
-      <Title>Cacophonic Cadence</Title>
+      <Title>Creative Coding</Title>
       <Description>
-        An interactive code exploration using Perlin noise
+        An interactive code exploration using Perlin noise 
       </Description>
       <Iframe 
         src="https://editor.p5js.org/srivikashini_k/full/lcmW57vsW" 
