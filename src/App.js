@@ -15,6 +15,7 @@ import ARGut from './components/Pages/ARGut.js';
 import styled from "styled-components";
 import BioRythm from "./components/Pages/BioRythm.js";
 import Kurio from "./components/Pages/Kurio.js";
+import Samagra from "./components/Pages/Samagra.js";
 
 // Styled components
 const Body = styled.div`
@@ -51,6 +52,7 @@ function App() {
               } 
             />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/0" element={<Samagra />} />
             <Route path="/projects/1" element={<Ethnography />} />
             <Route path="/projects/2" element={<CacophonicCadence />} />
             <Route path="/projects/3" element={<Pose />} />
