@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Static imports for project images
-import Image1 from '../ProjectInfoImage/Samagra/CSoon.png';
+import Image1 from '../ProjectInfoImage/Samagra/sa.png';
 
 
 // Styled components
