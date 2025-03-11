@@ -22,8 +22,8 @@ export const Bio = {
 export const projects = [
   {
     id: 0,
-    title: "Samagra - Internship",
-    date: "August 2024 - Present",
+    title: "Kumbh Sah'AI'yak - AI Chatbot",
+    date: "August 2024 - Novemeber 2024",
     description:
       "Designing human-centered solutions to drive impactful social change through user-focused governance innovations. ",
     image: require('../components/ProjectInfoImage/CardImage/main2.png'), // Updated path
