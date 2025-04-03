@@ -214,7 +214,7 @@ const Navbar = () => {
         <ButtonContainer>
           <GitHubButton 
             as="a" 
-            href="https://drive.google.com/file/d/1IJP6aGDhrcJwU-u0psY-QFURaQ3C1j7w/view?usp=sharing" 
+            href="https://drive.google.com/file/d/1fulg--4r5eXChJcjBYQEmeWlThNkPQXN/view?usp=sharing" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -229,7 +229,7 @@ const Navbar = () => {
         </MobileMenuItems>
         <MobileMenuButton 
           as="a" 
-          href="https://drive.google.com/file/d/1IJP6aGDhrcJwU-u0psY-QFURaQ3C1j7w/view?usp=sharing" 
+          href="https://drive.google.com/file/d/1fulg--4r5eXChJcjBYQEmeWlThNkPQXN/view?usp=sharing" 
           target="_blank" 
           rel="noopener noreferrer"
         >

@@ -109,10 +109,11 @@ const AboutContainer = styled(SectionContainer)`
 `;
 
 const AboutText = styled.p`
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   opacity: 0.9;
   font-family: 'Georgia', serif;
+  font-style: italic;
   transition: transform 0.3s ease-out;
 `;
 
@@ -176,13 +177,13 @@ function HeroSection() {
           </TypewriterText>
           <Title>I am {Bio.name}</Title>
           <Description>
-            a Design Technologist
+            a New media designer
             <br />
             working at the intersection of Art, Science, and Technology.
           </Description>
           <ButtonContainer>
             <Button href="/projects">Portfolio</Button>
-            <Button href="https://drive.google.com/file/d/1IJP6aGDhrcJwU-u0psY-QFURaQ3C1j7w/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</Button>
+            <Button href="https://drive.google.com/file/d/1fulg--4r5eXChJcjBYQEmeWlThNkPQXN/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</Button>
           </ButtonContainer>
         </Content>
       </SectionContainer>
@@ -190,8 +191,9 @@ function HeroSection() {
         <InteractiveCanvas /> {/* Effect in About Section */}
         <Content>
           <Title>About Me</Title>
-          <AboutText>I explore how design shapes the way we see, feel, and engage with the world.</AboutText>
-          <AboutText>As a <Highlight>designer, creative technologist, and researcher</Highlight>, I craft experiences that blur the lines between the digital and the physical, the speculative and the real.</AboutText>
+          <Highlight>Designer, Creative technologist, and Researcher</Highlight>
+          <AboutText>I explore how technology shapes perception, emotion, and interaction, using creative coding, interaction design, and research to craft experiences that challenge how we see and engage with the world.</AboutText>
+          <AboutText>Curiosity drives my process—I love experimenting, questioning, and pushing boundaries. </AboutText>
         </Content>
       </AboutContainer>
     </>
