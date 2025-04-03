@@ -6,20 +6,29 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
     "p5": "^1.11.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
     "react-icons": "^5.3.0",
     "react-p5": "^1.4.1",
     "react-router-dom": "^6.26.2",
     "react-scripts": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
     "styled-components": "^6.1.13",
+    "tsparticles": "^3.8.1",
     "typewriter-effect": "^2.21.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "prebuild": "cross-env NODE_ENV=production",
+    "build": "GENERATE_SOURCEMAP=true react-scripts build",
+    "analyze": "source-map-explorer build/static/js/*.js",
+    "optimize": "webpack-bundle-analyzer build/static/js/*.js",
+    "clean": "rm -rf build && rm -rf node_modules/.cache",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,6 +53,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "cross-env": "^7.0.3",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "webpack-bundle-analyzer": "^4.8.0",
+    "source-map-explorer": "^2.5.3"
   }
 }

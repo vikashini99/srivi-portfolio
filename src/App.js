@@ -3,14 +3,14 @@ import { useState } from "react";
 import { darkTheme, lightTheme } from './utils/Themes.js';
 import Navbar from "./components/Navbar";
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import HeroSection from "./components/HeroSection";
 import ProjectsPage from "./components/ProjectPage";
 import CacophonicCadence from './components/Pages/CacophonicCadence';
 import Pose from './components/Pages/Pose';
-import Ethnography from './components/Pages/Ethnography'; // Ensure you create this component
-import CreativeCoding from './components/Pages/CreativeCoding'; // Import the new component
-import Kinetics from './components/Pages/Kinetics'; // Import the new component
+import Ethnography from './components/Pages/Ethnography'; 
+import CreativeCoding from './components/Pages/CreativeCoding'; 
+import Kinetics from './components/Pages/Kinetics'; 
 import ARGut from './components/Pages/ARGut.js'; 
 import styled from "styled-components";
 import BioRythm from "./components/Pages/BioRythm.js";
@@ -31,6 +31,18 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
 `;
 
+function Layout({ children }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  return (
+    <>
+      {!isHomePage && <Navbar />}
+      {children}
+    </>
+  );
+}
+
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -38,31 +50,31 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
         <Body>
-          <Navbar />
-          <Routes>
-            <Route 
-              path="/" 
-              element={
-                <>
-                  <HeroSection />
-                  <Wrapper>
-                    {/* Include other components you want on the main page */}
-                  </Wrapper>
-                </>
-              } 
-            />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/0" element={<Samagra />} />
-            <Route path="/projects/1" element={<Ethnography />} />
-            <Route path="/projects/2" element={<CacophonicCadence />} />
-            <Route path="/projects/3" element={<Pose />} />
-            <Route path="/projects/4" element={<Kurio />} />
-            <Route path="/projects/5" element={<Kinetics/>} /> {/* Add the new route */}
-            <Route path="/projects/7" element={<CreativeCoding />} /> {/* Add the new route */}
-            <Route path="/projects/10" element={<ARGut />} />
-            <Route path="/projects/6" element={<BioRythm />} />
-            {/* Add other routes for more projects if needed */}
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route 
+                path="/" 
+                element={
+                  <>
+                    <HeroSection />
+                    <Wrapper>
+                      {/* Include other components you want on the main page */}
+                    </Wrapper>
+                  </>
+                } 
+              />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/0" element={<Samagra />} />
+              <Route path="/projects/1" element={<Ethnography />} />
+              <Route path="/projects/2" element={<CacophonicCadence />} />
+              <Route path="/projects/3" element={<Pose />} />
+              <Route path="/projects/4" element={<Kurio />} />
+              <Route path="/projects/5" element={<Kinetics />} />
+              <Route path="/projects/7" element={<CreativeCoding />} />
+              <Route path="/projects/10" element={<ARGut />} />
+              <Route path="/projects/6" element={<BioRythm />} />
+            </Routes>
+          </Layout>
         </Body>
       </Router>
     </ThemeProvider>

@@ -2,15 +2,19 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 // Static imports for project images
-import Image1 from '../ProjectInfoImage/Cacophonic/1.png';
+import Image1 from '../ProjectInfoImage/Cacophonic/1.webp';
 import Image2 from '../ProjectInfoImage/Cacophonic/2.gif';
-import Image3 from '../ProjectInfoImage/Cacophonic/3.png';
-import Image4 from '../ProjectInfoImage/Cacophonic/4.png';
-import Image5 from '../ProjectInfoImage/Cacophonic/7.png';
-import Image6 from '../ProjectInfoImage/Cacophonic/5.png';
-import Image7 from '../ProjectInfoImage/Cacophonic/6.png';
-import Image8 from '../ProjectInfoImage/Cacophonic/8.png';
-import Image9 from '../ProjectInfoImage/Cacophonic/9.png';
+import Image3 from '../ProjectInfoImage/Cacophonic/3.webp';
+import Image4 from '../ProjectInfoImage/Cacophonic/4.webp';
+import Image5 from '../ProjectInfoImage/Cacophonic/7.webp';
+import Image6 from '../ProjectInfoImage/Cacophonic/5.webp';
+import Image7 from '../ProjectInfoImage/Cacophonic/6.webp';
+import Image8 from '../ProjectInfoImage/Cacophonic/8.webp';
+import Image9 from '../ProjectInfoImage/Cacophonic/9.webp';
+import KinImage from '../ProjectInfoImage/CardImage/kinetics.gif'; 
+import PoseImage from '../ProjectInfoImage/CardImage/pose.png';
+
+import NextProjects from '../NextProjects';
 
 // Styled components
 const Container = styled.div`
@@ -18,51 +22,39 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  width: 100%; /* Allow full width */
-  max-width: 100%; /* Ensure max-width is not limiting */
+  width: 100%;
+  max-width: 100%;
 `;
 
-const Image = styled.img`
+const StyledImage = styled.img`  /* Renamed from 'Image' */
   width: 100%;
-  max-width: 1100px; /* Adjust max-width as needed */
+  max-width: 1100px;
   margin: 0px 0;
   display: block;
   margin-left: auto;
-  margin-right: auto; /* Centers the image */
+  margin-right: auto;
 `;
 
 const Iframe = styled.iframe`
-  width: 1100px; /* Set to a fixed width to see if it changes */
-  height: 550px; /* Adjust the height accordingly */
+  width: 1100px;
+  height: 550px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: none; /* Remove border */
+  border: none;
 `;
 
-const Title = styled.h1`
-  margin: 20px 0;
-  font-size: 32px; /* You can adjust the size as needed */
-  color: ${({ theme }) => theme.secondary};
-  text-align: center; /* Centers the title */
-`;
-
-const Description = styled.p`
-  margin-bottom: 20px;
-  color: ${({ theme }) => theme.gray_one};
-  text-align: center; /* Centers the description */
-`;
-
-// Stamps Container and Links
+// 🔥 Page Stamps fixed to the right, text left-aligned
 const PageStamps = styled.div`
   position: fixed;
-  top: 50%; /* Position from the top */
-  right: 20px; /* Keep it from the right side */
-  transform: translateY(-50%); /* Center it vertically */
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: flex-start; /* Align the items to the left */
+  gap: 12px;
+  align-items: flex-start;
+  z-index: 1000;
 `;
 
 const PageStampLink = styled.a`
@@ -72,9 +64,12 @@ const PageStampLink = styled.a`
   font-size: 14px;
   display: flex;
   align-items: center;
+  padding: 5px 0;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: ${({ theme }) => theme.secondary};
+    transform: scale(1.05);
   }
 `;
 
@@ -117,18 +112,34 @@ const useActiveSection = (sectionIds) => {
 };
 
 const CacophonicCadence = () => {
-  // Section IDs
   const sectionIds = ['Introduction', 'Prototypes', 'Final Installation'];
   const activeSection = useActiveSection(sectionIds);
 
-  // Scroll to top on component mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const nextProjects = [
+    {
+      id: 5,
+      title: 'Kinetic Sculpture',
+      date: '2024',
+      description: 'An interactive kinetic sculpture installation',
+      image: KinImage,
+      tags: ["Speculative Design", "Interaction", "Design Research"],
+    },
+    {
+      id: 3,
+      title: 'Pose',
+      date: '2024',
+      description: 'Pose is an immersive experience blending motion and digital storytelling.',
+      image: PoseImage,
+      tags: ["Immersive Experience", "Motion Design", "Storytelling"],
+    }
+  ];
+
   return (
     <Container>
-      {/* Page Stamps for navigating between sections */}
       <PageStamps>
         {sectionIds.map((id) => (
           <PageStampLink href={`#${id}`} key={id}>
@@ -138,54 +149,47 @@ const CacophonicCadence = () => {
         ))}
       </PageStamps>
 
-      {/* Title and Description for the entire project */}
-      <Title>Cacophonic Cadence</Title>
-      <Description>
-        An immersive soundscape experience reflecting on the effects of anthropogenic noise pollution on our current acoustic environment through the voices of birds.
-      </Description>
-
-      {/* Images Section */}
-      <section id="Introduction">
-        <Image src={Image1} alt="Cacophonic Cadence Image 1" />
-        <Image src={Image2} alt="Cacophonic Cadence Image 2" />
-      </section>
+      <StyledImage src={Image1} alt="Cacophonic Cadence Image 1" loading="lazy" />
+      <StyledImage src={Image2} alt="Cacophonic Cadence Image 2" loading="lazy" />
 
       <section id="Prototypes">
-        <Image src={Image3} alt="Cacophonic Cadence Image 3" />
-        {/* Mimicry Bird Video from YouTube */}
+        <StyledImage src={Image3} alt="Cacophonic Cadence Image 3" loading="lazy" />
         <Iframe 
           src="https://www.youtube.com/embed/AqPUCWfuJRY" 
           title="Mimicry Bird Video"
           allowFullScreen
+          loading="lazy"
         />
       </section>
 
-      <Image src={Image4} alt="Cacophonic Cadence Image 4" />
-      
-      {/* Iframe Section for the p5.js sketch */}
+      <StyledImage src={Image4} alt="Cacophonic Cadence Image 4" loading="lazy" />
+
       <section id="iframe">
         <Iframe 
           src="https://editor.p5js.org/srivikashini_k/full/F-CWKsGED" 
           title="Cacophonic Cadence p5.js Sketch"
           allowFullScreen
+          loading="lazy"
         />
       </section>
 
-      <Image src={Image5} alt="Cacophonic Cadence Image 5" />
-      <Image src={Image6} alt="Cacophonic Cadence Image 6" />
-      <Image src={Image7} alt="Cacophonic Cadence Image 7" />
+      <StyledImage src={Image5} alt="Cacophonic Cadence Image 5" loading="lazy" />
+      <StyledImage src={Image6} alt="Cacophonic Cadence Image 6" loading="lazy" />
+      <StyledImage src={Image7} alt="Cacophonic Cadence Image 7" loading="lazy" />
 
       <section id="Final Installation">
-        <Image src={Image8} alt="Cacophonic Cadence Image 8" />
-        <Image src={Image9} alt="Cacophonic Cadence Image 9" />
+        <StyledImage src={Image8} alt="Cacophonic Cadence Image 8" loading="lazy" />
+        <StyledImage src={Image9} alt="Cacophonic Cadence Image 9" loading="lazy" />
       </section>
 
-      {/* Staging Video from YouTube */}
       <Iframe 
         src="https://www.youtube.com/embed/UZoyuw0YdVc" 
         title="Staging Video"
         allowFullScreen
+        loading="lazy"
       />
+
+      <NextProjects projects={nextProjects} />
     </Container>
   );
 };

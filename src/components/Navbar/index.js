@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTheme } from 'styled-components'; // Import useTheme for theme context
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
+import { FaBars } from "react-icons/fa6";
+
 import { NavLink as LinkR } from 'react-router-dom'; // Import LinkR for routing
 
 // Styled components
@@ -207,7 +208,7 @@ const Navbar = () => {
           <FaBars />
         </MobileIcon>
         <NavItems>
-          <NavLink to="/">About</NavLink>
+          <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink> {/* Opens Projects in the same tab */}
         </NavItems>
         <ButtonContainer>
@@ -223,7 +224,7 @@ const Navbar = () => {
       </NavbarContainer>
       <MobileMenu isOpen={isOpen}>
         <MobileMenuItems>
-          <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>About</MobileMenuLink>
+          <MobileMenuLink to="/" onClick={() => setIsOpen(false)}>Home</MobileMenuLink>
           <MobileMenuLink to="/projects" onClick={() => setIsOpen(false)}>Projects</MobileMenuLink> {/* Same tab link */}
         </MobileMenuItems>
         <MobileMenuButton 
@@ -242,3 +243,4 @@ const Navbar = () => {
 
 
 export default Navbar;
+

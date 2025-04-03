@@ -8,16 +8,31 @@
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Preload critical Google Font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" as="style" />
     
-    <!-- Add p5.js CDN script here -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- Load Google Font asynchronously -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');" />
+
+    <!-- Prevent font swap flash -->
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300 700;
+        font-display: swap;
+        src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap') format('woff2');
+      }
+    </style>
+
+    <!-- Defer p5.js to avoid render-blocking -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" defer></script>
 
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- React build scripts will be injected here during the build process -->
   </body>
 </html>
